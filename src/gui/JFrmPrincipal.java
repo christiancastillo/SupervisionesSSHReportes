@@ -61,6 +61,12 @@ public class JFrmPrincipal extends JFrame {
 		mnNewMenu.add(mntmNewMenuItem);
 		
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Historial");
+		mntmNewMenuItem_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrmHistorialSupervisiones frmHistSuper = classes.JSingletonForms.getFrmHistorialSupervision();
+				frmHistSuper.setVisible(true);
+			}
+		});
 		mnNewMenu.add(mntmNewMenuItem_1);
 		
 		JMenu mnNewMenu_1 = new JMenu("Ayuda");

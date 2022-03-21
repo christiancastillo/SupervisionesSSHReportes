@@ -38,6 +38,7 @@ public class JFrmHistorialSupervisiones extends JFrame {
 	 * Create the frame.
 	 */
 	public JFrmHistorialSupervisiones() {
+		setTitle("HISTORIAL DE SUPERVISIONES");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 737, 558);
 		contentPane = new JPanel();
@@ -59,17 +60,17 @@ public class JFrmHistorialSupervisiones extends JFrame {
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel.createSequentialGroup()
-					.addGap(119)
-					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 361, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(231, Short.MAX_VALUE))
+				.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 691, Short.MAX_VALUE)
+					.addContainerGap())
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
-					.addGap(89)
+					.addGap(48)
 					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 190, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(230, Short.MAX_VALUE))
+					.addContainerGap(271, Short.MAX_VALUE))
 		);
 		
 		table = new JTable();

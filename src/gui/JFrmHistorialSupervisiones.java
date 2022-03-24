@@ -76,11 +76,13 @@ public class JFrmHistorialSupervisiones extends JFrame {
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null},
-				{null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
 			},
 			new String[] {
-				"New column", "New column"
+				"ID", "CLUES", "Unidad", "Departamento", "Persona 1", "Persona 2", "Persona 3", "Persona 4", "Persona 5", "Persona 6", "Fecha superv"
 			}
 		));
 		scrollPane.setViewportView(table);

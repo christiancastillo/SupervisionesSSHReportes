@@ -1,9 +1,16 @@
 package classes;
 
-public interface IDatabaseUtils {
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
+import javax.swing.JTable;
+
+public interface IDatabaseUtils {	
 	public void queryDB();
-	public void connectDB();
-	public void disconnectDB();
+	public void insertDB();
+	public void updateDB();
+	public void retrieveDateIntoTable(String sql, JTable tabla);
 	
 }

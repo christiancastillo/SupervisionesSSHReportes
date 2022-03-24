@@ -1,31 +1,32 @@
 package gui;
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.JPopupMenu;
 import java.awt.Component;
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import gui.JFrmAcercaDe;
 
-public class JFrmPrincipal extends JFrame {
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
+import javax.swing.JTable;
+import javax.swing.border.EmptyBorder;
+
+import classes.IDatabaseUtils;
+
+public class JFrmPrincipal extends JFrame implements IDatabaseUtils{
 
 	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) {		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -42,6 +43,8 @@ public class JFrmPrincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public JFrmPrincipal() {
+		
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		
@@ -113,4 +116,28 @@ public class JFrmPrincipal extends JFrame {
 			}
 		});
 	}
+
+	@Override
+	public void queryDB() {
+		// TODO Auto-generated method stub		
+		
+	}
+
+	@Override
+	public void insertDB() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateDB() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void retrieveDateIntoTable(String sql, JTable tabla) {
+		// TODO Auto-generated method stub
+		
+	} 
 }

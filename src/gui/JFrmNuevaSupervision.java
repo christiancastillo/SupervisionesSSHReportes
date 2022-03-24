@@ -31,6 +31,7 @@ import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 import javax.swing.JTextArea;
 
+
 public class JFrmNuevaSupervision extends JFrame {
 
 	private JPanel contentPane;

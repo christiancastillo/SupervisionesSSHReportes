@@ -30,6 +30,8 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 public class JFrmNuevaSupervision extends JFrame {
@@ -304,6 +306,12 @@ public class JFrmNuevaSupervision extends JFrame {
 		lblNewLabel_6_5.setFont(new Font("Tahoma", Font.BOLD, 11));
 		
 		JButton btnNewButton = new JButton("Generar reporte");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//CODIGO PARA GENERAR REPORTE; MOSTRAR JOPTIONPANE PARA DECIR QUE SE GENERARA REPORTE EN TAL RUTA
+				
+			}
+		});
 		
 		JButton btnNewButton_1 = new JButton("Guardar");
 		
@@ -311,6 +319,11 @@ public class JFrmNuevaSupervision extends JFrame {
 		lblNewLabel_7.setFont(new Font("Tahoma", Font.BOLD, 11));
 		
 		JScrollPane scrollPane = new JScrollPane();
+		
+		JComboBox comboBox = new JComboBox();
+		
+		JLabel lblNewLabel = new JLabel("Departamento");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
@@ -318,10 +331,10 @@ public class JFrmNuevaSupervision extends JFrame {
 					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING, false)
 						.addGroup(gl_panel.createSequentialGroup()
 							.addGap(10)
-							.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING, false)
+							.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
 								.addGroup(gl_panel.createSequentialGroup()
 									.addComponent(lblNewLabel_1)
-									.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.RELATED)
 									.addComponent(dateChooser, GroupLayout.PREFERRED_SIZE, 246, GroupLayout.PREFERRED_SIZE))
 								.addGroup(gl_panel.createSequentialGroup()
 									.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 118, GroupLayout.PREFERRED_SIZE)
@@ -333,7 +346,12 @@ public class JFrmNuevaSupervision extends JFrame {
 										.addComponent(lblNewLabel_3, GroupLayout.PREFERRED_SIZE, 118, Short.MAX_VALUE))
 									.addPreferredGap(ComponentPlacement.RELATED)
 									.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-										.addComponent(spinner, GroupLayout.PREFERRED_SIZE, 61, GroupLayout.PREFERRED_SIZE)
+										.addGroup(gl_panel.createSequentialGroup()
+											.addComponent(spinner, GroupLayout.PREFERRED_SIZE, 61, GroupLayout.PREFERRED_SIZE)
+											.addPreferredGap(ComponentPlacement.RELATED)
+											.addComponent(lblNewLabel)
+											.addGap(12)
+											.addComponent(comboBox, 0, 129, Short.MAX_VALUE))
 										.addComponent(textField_1)))))
 						.addGroup(gl_panel.createSequentialGroup()
 							.addGap(53)
@@ -358,45 +376,40 @@ public class JFrmNuevaSupervision extends JFrame {
 								.addComponent(txtPersona3, GroupLayout.PREFERRED_SIZE, 141, GroupLayout.PREFERRED_SIZE)
 								.addComponent(txtPersona2, GroupLayout.PREFERRED_SIZE, 141, GroupLayout.PREFERRED_SIZE)
 								.addComponent(txtPersona1, GroupLayout.PREFERRED_SIZE, 141, GroupLayout.PREFERRED_SIZE))
-							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGap(4)
 							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
 								.addGroup(gl_panel.createSequentialGroup()
-									.addGap(15)
-									.addComponent(lblNewLabel_6_5, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
+									.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
+										.addComponent(lblNewLabel_6_3)
+										.addComponent(lblNewLabel_6_4, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+										.addComponent(lblNewLabel_6_5, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE))
 									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(txtCargoPersona6, 140, 140, 140))
-								.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
-									.addGap(4)
 									.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-										.addGroup(gl_panel.createSequentialGroup()
-											.addComponent(lblNewLabel_6_4, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-											.addPreferredGap(ComponentPlacement.RELATED)
-											.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-												.addComponent(txtCargoPersona4, GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
-												.addComponent(txtCargoPersona5, 146, 146, 146)))
-										.addGroup(gl_panel.createSequentialGroup()
-											.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
-												.addGroup(gl_panel.createSequentialGroup()
-													.addComponent(lblNewLabel_6)
-													.addPreferredGap(ComponentPlacement.UNRELATED))
-												.addComponent(lblNewLabel_6_1, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-												.addComponent(lblNewLabel_6_2, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
-											.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-												.addGroup(gl_panel.createSequentialGroup()
-													.addPreferredGap(ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-													.addComponent(txtCargoPersona3, 132, 132, 132)
-													.addGap(8))
-												.addGroup(gl_panel.createSequentialGroup()
-													.addPreferredGap(ComponentPlacement.RELATED)
-													.addComponent(txtCargoPersona2, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE))))
-										.addComponent(btnNewButton_1))
-									.addGap(155))
+										.addComponent(txtCargoPersona6, 140, 140, 140)
+										.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+											.addComponent(txtCargoPersona4, GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+											.addComponent(txtCargoPersona5, 146, 146, 146))))
 								.addGroup(gl_panel.createSequentialGroup()
-									.addGap(10)
-									.addComponent(lblNewLabel_6_3)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(txtCargoPersona1, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE)))
-							.addContainerGap())
+									.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
+										.addGroup(gl_panel.createSequentialGroup()
+											.addComponent(lblNewLabel_6)
+											.addPreferredGap(ComponentPlacement.UNRELATED))
+										.addComponent(lblNewLabel_6_1, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+										.addComponent(lblNewLabel_6_2, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
+									.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+										.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+											.addGroup(gl_panel.createSequentialGroup()
+												.addPreferredGap(ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+												.addComponent(txtCargoPersona3, 132, 132, 132)
+												.addGap(8))
+											.addGroup(gl_panel.createSequentialGroup()
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(txtCargoPersona2, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE)))
+										.addGroup(gl_panel.createSequentialGroup()
+											.addPreferredGap(ComponentPlacement.UNRELATED)
+											.addComponent(txtCargoPersona1, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE))))
+								.addComponent(btnNewButton_1))
+							.addGap(24))
 						.addComponent(btnNewButton, Alignment.LEADING)))
 		);
 		gl_panel.setVerticalGroup(
@@ -406,10 +419,10 @@ public class JFrmNuevaSupervision extends JFrame {
 					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_panel.createSequentialGroup()
 							.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
-								.addComponent(txtCargoPersona1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addComponent(lblNewLabel_5)
 								.addComponent(txtPersona1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblNewLabel_6))
+								.addComponent(lblNewLabel_6)
+								.addComponent(txtCargoPersona1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
 								.addGroup(gl_panel.createSequentialGroup()
@@ -430,8 +443,8 @@ public class JFrmNuevaSupervision extends JFrame {
 							.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
 								.addComponent(lblNewLabel_5_3)
 								.addComponent(txtPersona4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblNewLabel_6_3)
-								.addComponent(txtCargoPersona4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addComponent(txtCargoPersona4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblNewLabel_6_3))
 							.addGap(18)
 							.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
 								.addComponent(lblNewLabel_5_4)
@@ -459,7 +472,9 @@ public class JFrmNuevaSupervision extends JFrame {
 							.addGap(34)
 							.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
 								.addComponent(lblNewLabel_4)
-								.addComponent(spinner, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
+								.addComponent(spinner, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblNewLabel))))
 					.addGap(23)
 					.addComponent(lblNewLabel_7)
 					.addPreferredGap(ComponentPlacement.RELATED)

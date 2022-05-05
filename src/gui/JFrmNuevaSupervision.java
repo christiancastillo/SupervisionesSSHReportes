@@ -23,6 +23,9 @@ import javax.swing.JToggleButton;
 import javax.swing.JTextPane;
 import javax.swing.JTextField;
 import com.toedter.calendar.JDayChooser;
+
+import classes.IDatabaseUtils;
+
 import com.toedter.calendar.JDateChooser;
 import java.awt.Font;
 import javax.swing.JSpinner;
@@ -34,7 +37,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 
-public class JFrmNuevaSupervision extends JFrame {
+public class JFrmNuevaSupervision extends JFrame implements IDatabaseUtils{
 
 	private JPanel contentPane;
 	private SimpleDateFormat sdf;
@@ -491,5 +494,32 @@ public class JFrmNuevaSupervision extends JFrame {
 		textArea.setTabSize(2);
 		panel.setLayout(gl_panel);
 		contentPane.setLayout(gl_contentPane);
+				
 	}
+
+	@Override
+	public void queryDB() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void insertDB() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateDB() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void retrieveDateIntoTable(String sql, JTable tabla) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
 }

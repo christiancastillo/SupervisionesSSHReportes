@@ -28,6 +28,7 @@ public class JFrmPrincipal extends JFrame implements IDatabaseUtils{
 	 */
 	public static void main(String[] args) {		
 		EventQueue.invokeLater(new Runnable() {
+			
 			public void run() {
 				try {
 					JFrmPrincipal frame = new JFrmPrincipal();

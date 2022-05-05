@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -15,13 +16,17 @@ import javax.swing.JButton;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-public class JFrmAcercaDe extends JFrame {
+import classes.IDatabaseUtils;
+
+public class JFrmAcercaDe extends JFrame implements IDatabaseUtils{
 
 	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
 	 */
+	
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -38,6 +43,9 @@ public class JFrmAcercaDe extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	
+	
+	
 	public JFrmAcercaDe() {
 		addWindowListener(new WindowAdapter() {
 			@Override
@@ -105,5 +113,29 @@ public class JFrmAcercaDe extends JFrame {
 		);
 		panel.setLayout(gl_panel);
 		contentPane.setLayout(gl_contentPane);
+	}
+
+	@Override
+	public void queryDB() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void insertDB() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateDB() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void retrieveDateIntoTable(String sql, JTable tabla) {
+		// TODO Auto-generated method stub
+		
 	}
 }

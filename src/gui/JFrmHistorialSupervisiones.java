@@ -13,7 +13,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class JFrmHistorialSupervisiones extends JFrame {
+import classes.IDatabaseUtils;
+
+public class JFrmHistorialSupervisiones extends JFrame implements IDatabaseUtils{
 
 	private JPanel contentPane;
 	private JTable table;
@@ -88,5 +90,29 @@ public class JFrmHistorialSupervisiones extends JFrame {
 		scrollPane.setViewportView(table);
 		panel.setLayout(gl_panel);
 		contentPane.setLayout(gl_contentPane);
+	}
+
+	@Override
+	public void queryDB() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void insertDB() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateDB() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void retrieveDateIntoTable(String sql, JTable tabla) {
+		// TODO Auto-generated method stub
+		
 	}
 }
